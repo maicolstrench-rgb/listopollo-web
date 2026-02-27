@@ -1,0 +1,323 @@
+Claro, aquí está el código HTML completo:
+
+```html name=index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listopollo | Catálogo Oficial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>LISTOPOLLO</h1>
+    <p>Confianza, Calidad y Servicio</p>
+    <p>Venta al Mayoreo y al Detal | Productos Congelados y Refrigerados</p>
+</header>
+
+<nav class="navbar">
+    <button class="nav-btn" onclick="scrollToSection('carnes-frias')">Carnes Frías</button>
+    <button class="nav-btn" onclick="scrollToSection('pescado')">Pescado</button>
+    <button class="nav-btn" onclick="scrollToSection('cerdo')">Cerdo</button>
+    <button class="nav-btn" onclick="scrollToSection('pollo-presa')">Pollo a la Presa</button>
+    <button class="nav-btn" onclick="scrollToSection('pollo-despresado')">Pollo Despresado</button>
+    <button class="nav-btn" onclick="scrollToSection('estrella')">Producto Estrella</button>
+    <button class="nav-btn" onclick="toggleCart()">🛒 Carrito (<span id="cart-count">0</span>)</button>
+</nav>
+
+<div class="container">
+
+    <!-- CARNES FRÍAS -->
+    <div class="section" id="carnes-frias">
+        <h2>🔥 CARNES FRÍAS</h2>
+        <div class="products-grid">
+            <div class="card product-card">
+                <h3>Molipollo Express</h3>
+                <p class="price">$2.50 por 50gr</p>
+                <p class="description">Carne molida de pollo fresco y congelado</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Molipollo Express 50gr', 2.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Chorizo Bucanero</h3>
+                <p class="price">$8.00 x10 unidades</p>
+                <p class="description">Chorizo congelado de excelente calidad</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Chorizo Bucanero x10', 8.00)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Salchichón Bucanero</h3>
+                <p class="price">$6.50</p>
+                <p class="description">Salchichón de pollo 1000gr</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Salchichón Bucanero 1000gr', 6.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Salchichón Mixto</h3>
+                <p class="price">$7.00</p>
+                <p class="description">Salchichón mixto 1000gr</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Salchichón Mixto 1000gr', 7.00)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PESCADO -->
+    <div class="section" id="pescado">
+        <h2>🐟 PESCADO - LISTO EL PEZ</h2>
+        <div class="products-grid">
+            <div class="card product-card">
+                <h3>Tilapia</h3>
+                <p class="price">$5.50 por lb</p>
+                <p class="description">Filete de tilapia fresco</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Tilapia por lb', 5.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Filete de Trucha</h3>
+                <p class="price">$9.00 por lb</p>
+                <p class="description">Empacado por libra individual</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Filete de Trucha por lb', 9.00)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Filete de Róbalo</h3>
+                <p class="price">$8.50 por lb</p>
+                <p class="description">Empacado x3, x4, x5, x6</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Filete de Róbalo', 8.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Bagre en Bandeja</h3>
+                <p class="price">$12.00</p>
+                <p class="description">x4 unidades por bandeja</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Bagre en Bandeja x4', 12.00)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Bagre a Granel</h3>
+                <p class="price">$6.00 por kg</p>
+                <p class="description">Por kilos</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Bagre a Granel por kg', 6.00)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CERDO -->
+    <div class="section" id="cerdo">
+        <h2>🐖 CARNES DE CERDO</h2>
+        <div class="products-grid">
+            <div class="card product-card">
+                <h3>Tocino</h3>
+                <p class="price">$4.50 por lb</p>
+                <p class="description">Tocino fresco y congelado</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Tocino por lb', 4.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Costilla Especial</h3>
+                <p class="price">$5.00 por lb</p>
+                <p class="description">Costilla de cerdo especial</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Costilla Especial por lb', 5.00)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Cañón de Cerdo</h3>
+                <p class="price">$4.80 por lb</p>
+                <p class="description">Carne de cerdo selecta</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Cañón de Cerdo por lb', 4.80)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Carne de Cerdo para Asar</h3>
+                <p class="price">$5.50 por lb</p>
+                <p class="description">Carne ideal para asar</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Carne de Cerdo para Asar', 5.50)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POLLO A LA PRESA -->
+    <div class="section" id="pollo-presa">
+        <h2>🍗 POLLO A LA PRESA</h2>
+        <div class="products-grid">
+            <div class="card product-card">
+                <h3>Muslo y Contra</h3>
+                <p class="price">$3.20 por bandeja</p>
+                <p class="description">Bandejas de muslo y contra x5 unidades</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Muslo y Contra x5', 3.20)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Ala Campesina</h3>
+                <p class="price">$2.80 por lb</p>
+                <p class="description">Ala campesina por peso</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Ala Campesina por lb', 2.80)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Pechuga Individual</h3>
+                <p class="price">$3.50 por lb</p>
+                <p class="description">Pechuga individual por peso</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Pechuga Individual', 3.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Ala Blanca</h3>
+                <p class="price">$2.50 por bolsa</p>
+                <p class="description">x12 unidades por bolsa</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Ala Blanca x12', 2.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Menudencias Finas</h3>
+                <p class="price">$1.80</p>
+                <p class="description">500gr por bandeja</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Menudencias Finas 500gr', 1.80)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Muslo</h3>
+                <p class="price">$3.00 por lb</p>
+                <p class="description">x10 por peso</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Muslo x10', 3.00)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Contramuslo</h3>
+                <p class="price">$2.90 por lb</p>
+                <p class="description">x10 por peso</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Contramuslo x10', 2.90)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- POLLO DESPRESADO -->
+    <div class="section" id="pollo-despresado">
+        <h2>🍗 POLLO DESPRESADO</h2>
+        <div class="products-grid">
+            <div class="card product-card">
+                <h3>Pechuga Mariposa Deshuesada</h3>
+                <p class="price">$4.50 por lb</p>
+                <p class="description">Pechuga deshuesada premium</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Pechuga Mariposa Deshuesada', 4.50)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Contramuslo a Granel</h3>
+                <p class="price">$2.70 por lb</p>
+                <p class="description">Contramuslo a granel</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Contramuslo a Granel', 2.70)">Agregar al Carrito</button>
+            </div>
+
+            <div class="card product-card">
+                <h3>Medio Filete de Pechuga</h3>
+                <p class="price">$4.20 por lb</p>
+                <p class="description">Medio filete deshuesado</p>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-btn" onclick="addToCart('Medio Filete de Pechuga', 4.20)">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO ESTRELLA -->
+    <div class="section" id="estrella">
+        <h2>⭐ PRODUCTOS ESTRELLA</h2>
+        
+        <div class="card featured">
+            <h3>Filete de Pechuga Porcionado</h3>
+            <p class="description">Gramajes disponibles: 80gr - 120gr - 130gr - 140gr - 150gr - 200gr - 250gr - 300gr</p>
+            <p class="description">Empacado x10 en bolsa con cierre hermético</p>
+            <p class="price">$0.80 - $2.40 según gramaje</p>
+            <select class="select-gramaje">
+                <option>Selecciona un gramaje</option>
+                <option value="80">80gr - $0.80</option>
+                <option value="120">120gr - $1.20</option>
+                <option value="130">130gr - $1.30</option>
+                <option value="140">140gr - $1.40</option>
+                <option value="150">150gr - $1.50</option>
+                <option value="200">200gr - $2.00</option>
+                <option value="250">250gr - $2.50</option>
+                <option value="300">300gr - $3.00</option>
+            </select>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-btn" onclick="addFeaturedProduct(0)">Agregar al Carrito</button>
+        </div>
+
+        <div class="card featured">
+            <h3>Chuzos de Pollo con Tocineta</h3>
+            <p class="description">Deliciosos chuzos con tocineta</p>
+            <p class="price">$1.50 - $2.50 según peso</p>
+            <select class="select-gramaje">
+                <option>Selecciona un tamaño</option>
+                <option value="100">100gr - $1.50</option>
+                <option value="150">150gr - $2.00</option>
+                <option value="200">200gr - $2.50</option>
+            </select>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-btn" onclick="addFeaturedProduct(1)">Agregar al Carrito</button>
+        </div>
+
+        <div class="card featured">
+            <h3>Lomito de Pechuga</h3>
+            <p class="description">Empacado por libra o en bolsas industriales hasta 25kg</p>
+            <p class="price">$4.00 por lb</p>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-btn" onclick="addToCart('Lomito de Pechuga por lb', 4.00)">Agregar al Carrito</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- CARRITO MODAL -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleCart()">&times;</span>
+        <h2>🛒 Tu Carrito de Compras</h2>
+        <div id="cart-items"></div>
+        <div class="cart-summary">
+            <h3>Total: $<span id="total-price">0.00</span></h3>
+        </div>
+        <div class="cart-actions">
+            <button class="btn-checkout" onclick="checkout()">Procesar Pedido</button>
+            <button class="btn-clear" onclick="clearCart()">Limpiar Carrito</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Listopollo © 2026</p>
+    <p>Todos los productos disponibles congelados y refrigerados.</p>
+    <p>📞 Contáctanos: +1-555-0123 | 📧 info@listopollo.com</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
+
+Copia este código completo y pégalo en el archivo `index.html` que vas a crear en GitHub. 👍
